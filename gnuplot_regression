@@ -1,0 +1,37 @@
+#!/usr/bin/env gnuplot
+
+reset
+
+set terminal pngcairo  lw 2 size 800,600 enhanced font 'verdana,20'
+set termoption dash
+set output 'output1.png'
+
+unset colorbox
+#
+# reset linetypes to base dash patterns
+#
+#
+# define line styles using explicit rgbcolor names
+#
+
+
+
+set yrange [4:8]
+set xtics 4,0.5,8
+set grid xtics
+set xrange [4:8]
+set ytics 4,0.5,8
+#set logscale xy
+
+set ytics font 'Arial-Bold, 20'
+set xtics font 'Arial-Bold, 20'
+
+set xlabel ('Measured pIC_5_0') 
+set ylabel font 'Verdana, 24'
+set ylabel  ('Predicted pIC_5_0')
+set xlabel font 'Verdana, 24'
+
+plot 'loo3' lt rgb "black" ps 2 pt 4 notitle 
+
+#plot '.csv' linespoints  notitle, 
+
