@@ -1,0 +1,20 @@
+#!/usr/bin/env gnuplot
+
+reset
+
+set terminal pngcairo  lw 2 size 800,600 enhanced font 'verdana,20'
+set termoption dash
+set output 'output.png'
+
+unset colorbox
+#
+
+
+set boxwidth 0.5
+set style fill solid 1.00 border 0
+set xrange [0:3]
+set yrange [0:70]
+
+
+plot 'data1.dat' every 2    using 1:2 with boxes ls 1 notitle, \
+     'data1.dat' every 2::1 using 1:2 with boxes ls 2  notitle
