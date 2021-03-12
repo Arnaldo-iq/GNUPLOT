@@ -1,0 +1,39 @@
+#!/usr/bin/env gnuplot
+
+reset
+
+set terminal pngcairo  lw 2 size 800,600 enhanced font 'verdana,20'
+set termoption dash
+set output 'output.png'
+
+unset colorbox
+#
+# reset linetypes to base dash patterns
+#
+#
+# define line styles using explicit rgbcolor names
+#
+
+set for [i=1:5] linetype i dt i
+
+set linestyle 1 lt 1 lc rgb "black" lw 2
+set linestyle 2 lt 2 lc rgb "black" lw 2
+set linestyle 3 lt 3 lc rgb "black" lw 2
+
+set xrange [2:15] 
+set yrange [0:1.4] 
+set xtics 2,2,15 
+
+set xtics font 'Arial-Bold, 20'
+set ytics font 'Arial-Bold, 20'
+
+set xlabel ('r_O_C/Å') 
+set xlabel font 'Verdana-Italic, 24'
+set ylabel  (' g_O_C(r)')
+set ylabel font 'Verdana-Italic, 24'
+
+
+#plot 'O1o_.xvg' smooth bezier w l lw 2 lt 3 notitle, 'O2o_.xvg' smooth bezier w l lw 2 notitle
+
+plot 'No_.xvg' smooth bezier ls 2 notitle
+#plot 'O1o_.xvg' smooth bezier ls 2 notitle, 'O2o_.xvg' smooth bezier ls 3 notitle
